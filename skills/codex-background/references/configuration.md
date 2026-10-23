@@ -293,6 +293,7 @@ do not support that flag still reject it themselves. No provider translation bel
 | cursor | --session, --resume-last | yes | timeout |
 | grok | --session, --resume-last | no | timeout |
 | kimi | --session, --resume-last | yes | timeout |
+| mcode | --session | no | timeout |
 | omp | --session, --resume-last | no | timeout |
 | opencode | --session, --resume-last | no | success + timeout |
 | pi | --session, --resume-last | no | timeout |

@@ -10,7 +10,7 @@ import { installShim } from './harness/install-shim.mjs';
 
 const server = fileURLToPath(new URL('../skills/codex-background/scripts/server.mjs', import.meta.url));
 const cases = [
-  ...['claude', 'aider', 'grok', 'kimi', 'qoder', 'vibe', 'cursor', 'pi', 'omp', 'copilot', 'warp', 'commandcode'].map(key => ({ key, timeoutOnly: true, args: key === 'aider' ? ['--resume-last'] : key === 'qoder' ? ['--resume', 'opaque-session', '--add-dir', './extra'] : key === 'warp' ? ['--conversation', 'opaque-conversation'] : ['--session', 'opaque-session', ...(['kimi', 'cursor'].includes(key) ? ['--add-dir', './extra'] : [])] })),
+  ...['claude', 'aider', 'grok', 'kimi', 'qoder', 'vibe', 'cursor', 'pi', 'omp', 'copilot', 'warp', 'commandcode', 'mcode'].map(key => ({ key, timeoutOnly: true, args: key === 'aider' ? ['--resume-last'] : key === 'qoder' ? ['--resume', 'opaque-session', '--add-dir', './extra'] : key === 'warp' ? ['--conversation', 'opaque-conversation'] : ['--session', 'opaque-session', ...(['kimi', 'cursor'].includes(key) ? ['--add-dir', './extra'] : [])] })),
   { key: 'agy', mode: 'agy-analysis', args: ['--read-only', '--effort', 'high', '--add-dir', './extra'], expected: ['--effort', 'high'] },
   { key: 'codex', mode: 'capture', args: ['--session', 'thread-abc'], expected: ['resume', 'thread-abc'] },
   { key: 'zcode', mode: 'zcode-success', args: ['--session', 'sess_prior-0', '--disallowed-tools', 'Write,Edit'], expected: ['--resume', 'sess_prior-0'] },
